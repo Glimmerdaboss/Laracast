@@ -2,6 +2,6 @@
 
 @foreach($cards as $card)
 <ul>
-    <li>{{ $card->title }}</li>
+    <li><a href="cards/{{ $card->id }}">{{ $card->title }}</a></li>
 </ul>
 @endforeach
