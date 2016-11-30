@@ -17,7 +17,6 @@ class CardsController extends Controller
     
     public function show(Card $card)
     {
-      
         return view('pages.show',['card'=> $card]);
     }
 }
