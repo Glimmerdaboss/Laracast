@@ -8,6 +8,13 @@ class Card extends Model
 {
     public function Notes()
     {
-    return $this->hasmany(Note::class); //same as App/Note
+        return $this->hasmany(Note::class); //same as App/Note
     }
+
+    public function addNote(Note $note)
+    {
+        return $this->notes()->save($note);
+    }
+    
+    
 }

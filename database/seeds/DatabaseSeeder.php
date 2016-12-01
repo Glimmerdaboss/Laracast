@@ -30,5 +30,20 @@ class DatabaseSeeder extends Seeder
             'created_at'=> new DateTime,
             'updated_at'=> new DateTime
         ]);
+
+         DB::table('users')->insert([
+            'username'=>'ALD',
+            'email'=> 'ald@leissner.se',
+            'password'=> 'ald',
+            'created_at'=> new DateTime,
+            'updated_at'=> new DateTime          
+        ]);
+        DB::table('notes')->insert([
+            'user_id'=> 1,
+            'card_id'=> 1,
+            'body'=> 'Text of body',
+            'created_at'=> new DateTime,
+            'updated_at'=> new DateTime
+        ]);
     }
 }

@@ -12,7 +12,18 @@
 
     <ul class="list-group">
     @foreach($card->notes as $note)
-        <li class="list-group-item">{{ $note->body }}</li>
+        <li class="list-group-item">
+            {{ $note->body }}
+
+        <a href="#" class="pull-right">
+           
+             {{$note->user_id}}
+            
+                
+        </a></li>
+
+            
+
     @endforeach
     
     </ul>
@@ -22,13 +33,15 @@
     <h3>Add a new note</h3>
 
     <form method="POST" action="/fresh/public/pages/cards/{{ $card->id }}/notes">
-        {{csrf_field()}}
+        {!! csrf_field() !!}
         <div class="form-group">     
             <textarea name="body" class="form-control" rows="10" cols=""></textarea>
         </div>
 
          <div class="form-group">     
              <button type="submit" class="btn btn-primary">Add note</button>
+             <input type="hidden" name="_token" value="{{ Session::token() }}" />
+            
         </div>
     </form>
 </div>
